@@ -12,5 +12,23 @@
     "october": "Octubre",
     "november": "Noviembre",
     "december": "Diciembre"
+  },
+  "time": {
+    "hour": "h",
+    "day": "día",
+    "month": "mes"
+  },
+  "element": {
+    "air": "Aire",
+    "sun": "Sol",
+    "rain": "Lluvia",
+    "wind": "Viento"
+  },
+  "condition": {
+    "excellent": "excelente",
+    "good": "bueno",
+    "unstable": "inestable",
+    "bad": "malo",
+    "terrible": "horrible"
   }
 }
