@@ -1,7 +1,7 @@
 import { Dictionary } from "@/types";
 import { createContext } from "react";
 
-const TranslationContext = createContext<Dictionary | null>(null)
+export const TranslationContext = createContext<Dictionary | null>(null)
 
 export const TranslationProvider = ({
   children,
