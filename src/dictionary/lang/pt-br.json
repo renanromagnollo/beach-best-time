@@ -1,0 +1,34 @@
+{
+  "month": {
+    "janery": "Janeiro",
+    "february": "Fevereiro",
+    "march": "Março",
+    "april": "Abril",
+    "may": "Maio",
+    "june": "Junho",
+    "july": "Julho",
+    "august": "Agosto",
+    "september": "Setembro",
+    "october": "Outubro",
+    "november": "Novembro",
+    "december": "Dezembro"
+  },
+  "time": {
+    "hour": "h",
+    "day": "dia",
+    "month": "mês"
+  },
+  "element": {
+    "air": "Ar",
+    "sun": "Sol",
+    "rain": "Chuva",
+    "wind": "Vento"
+  },
+  "condition": {
+    "excellent": "ótimo",
+    "good": "bom",
+    "unstable": "instável",
+    "bad": "ruim",
+    "terrible": "péssimo"
+  }
+}

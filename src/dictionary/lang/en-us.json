@@ -1,0 +1,34 @@
+{
+  "month": {
+    "janery": "Janery",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
+  },
+  "time": {
+    "hour": "h",
+    "day": "day",
+    "month": "month"
+  },
+  "element": {
+    "air": "air",
+    "sun": "sun",
+    "rain": "rain",
+    "wind": "wind"
+  },
+  "condition": {
+    "excellent": "excellent",
+    "good": "good",
+    "unstable": "unstable",
+    "bad": "bad",
+    "terrible": "terrible"
+  }
+}
