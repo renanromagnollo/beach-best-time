@@ -1,3 +1,5 @@
+"use client"
+
 import { Dictionary } from "@/types";
 import { createContext } from "react";
 

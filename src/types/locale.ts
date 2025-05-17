@@ -1,9 +1,9 @@
 export enum SupportedLocale {
-  PT_BR = 'pt-br',
-  EN_US = 'en-us',
-  ES_ES = 'es-es',
-  FR_FR = 'fr-fr',
-  IT_IT = 'it-it'
+  PT_BR = 'pt-BR',
+  EN_US = 'en-US',
+  ES_ES = 'es-ES',
+  FR_FR = 'fr-FR',
+  IT_IT = 'it-IT'
 }
 
 export const locales = [
