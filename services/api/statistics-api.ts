@@ -4,11 +4,11 @@ import { Coords, ClimateData } from "@/domain";
 export class StatisticsAPI {
   constructor() { }
 
-  private async getCoordsByName(
-    beachName: string
+  async getCoordsByName(
+    locationName: string
   ): Promise<Coords | null> {
     try {
-      const query = encodeURIComponent(`${beachName}, Brasil`);
+      const query = encodeURIComponent(`${locationName}, Brasil`);
       const url = `https://nominatim.openstreetmap.org/search?format=json&q=${query}`;
 
       const res = await axios.get(url, {
@@ -31,7 +31,7 @@ export class StatisticsAPI {
     }
   }
 
-  private async getClimateData({
+  async getClimateData({
     latitude,
     longitude,
   }: Coords): Promise<ClimateData[] | null> {
