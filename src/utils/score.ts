@@ -13,7 +13,7 @@ export function calcScore(data: ClimateData[]): ClimateData[] {
       score += 5;
     }
 
-    // Chuva (linear): quanto mais próximo de 0 mm, melhor
+    // Precipitação total
     const chuvaScore = Math.max(0, 30 - (month.precipitation / 150) * 30);
     score += chuvaScore;
 
@@ -30,6 +30,25 @@ export function calcScore(data: ClimateData[]): ClimateData[] {
     } else if (month.windMax <= 35) {
       score += 5;
     }
+
+    // 🌥️ Cobertura de nuvens
+    const cloudCoverScore = Math.max(0, 20 - (month.cloudCover / 100) * 20);
+    score += cloudCoverScore;
+
+    // 🌧️ Horas de precipitação
+    const precipitationHoursScore = Math.max(0, 10 - (month.precipitationHours / 6) * 10);
+    score += precipitationHoursScore;
+
+    // 🌊 Temperatura da água
+    let waterTempScore = 0;
+    if (month.waterTemperature >= 24 && month.waterTemperature <= 28) {
+      waterTempScore = 10;
+    } else if (month.waterTemperature >= 22 && month.waterTemperature < 24) {
+      waterTempScore = 5;
+    } else if (month.waterTemperature > 28 && month.waterTemperature <= 30) {
+      waterTempScore = 5;
+    }
+    score += waterTempScore;
 
     // Avaliação com base na pontuação
     let rating: 'excellent' | 'good' | 'unstable' | 'bad' | 'terrible';
@@ -48,7 +67,7 @@ export function calcScore(data: ClimateData[]): ClimateData[] {
 
     return {
       ...month,
-      score,
+      score: parseFloat(score.toFixed(1)),
       rating,
     };
   });
