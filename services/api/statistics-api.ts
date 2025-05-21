@@ -13,7 +13,7 @@ export class StatisticsAPI {
 
       const res = await axios.get(url, {
         headers: {
-          'User-Agent': 'BeachBestTime/1.0 (renanromagnollo@gmail.com)',
+          'User-Agent': 'BeachesBrazil/1.0 (renanromagnollo@gmail.com)',
         },
       });
 
