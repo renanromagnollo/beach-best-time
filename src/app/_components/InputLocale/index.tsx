@@ -8,9 +8,10 @@ interface InputLocaleProps {
 
 export function InputLocale({ onSearch }: InputLocaleProps) {
 
+  const inputContent = useRef<HTMLInputElement | null>(null)
+
   //#TODO: Aplicar meganismo de sugestão de nomes ao começar a digitar
 
-  const inputContent = useRef<HTMLInputElement | null>(null)
 
   const handleSubmit = useCallback((e: FormEvent) => {
     e.preventDefault()
