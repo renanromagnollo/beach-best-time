@@ -1,5 +1,6 @@
 import { TranslationProvider } from "@/context/translation-context"
 import { getDictionary } from "@/dictionary/get-dictionary"
+import { Providers } from "@/providers"
 import { i18n, Locale } from "@/types"
 import { notFound } from "next/navigation"
 
@@ -18,8 +19,10 @@ export default async function LocaleLayout(props: {
   const dictionary = await getDictionary(locale)
 
   return (
-    <TranslationProvider dictionary={dictionary}>
-      {children}
-    </TranslationProvider>
+    <Providers>
+      <TranslationProvider dictionary={dictionary}>
+        {children}
+      </TranslationProvider>
+    </Providers>
   )
 }

@@ -2,11 +2,11 @@
 
 import { FormEvent, useCallback, useRef } from "react"
 
-interface InputLocaleProps {
+interface InputLocationProps {
   onSearch: (locale: string) => void
 }
 
-export function InputLocale({ onSearch }: InputLocaleProps) {
+export function InputLocation({ onSearch }: InputLocationProps) {
 
   //#TODO: Aplicar meganismo de sugestão de nomes ao começar a digitar
 

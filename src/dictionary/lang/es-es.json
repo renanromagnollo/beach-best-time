@@ -22,7 +22,10 @@
     "air": "Aire",
     "sun": "Sol",
     "rain": "Lluvia",
-    "wind": "Viento"
+    "wind": "Viento",
+    "waterTemp": "Temp. agua",
+    "cloudCover": "Nublado",
+    "rainHours": "Horas con lluvia"
   },
   "condition": {
     "excellent": "excelente",

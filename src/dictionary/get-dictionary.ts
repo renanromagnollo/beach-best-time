@@ -1,4 +1,4 @@
-import 'server-only'
+// import 'server-only'
 import { Dictionary, Locale, SupportedLocale } from '@/types'
 
 const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
