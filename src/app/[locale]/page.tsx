@@ -1,8 +1,8 @@
 'use client'
 
 import { useTranslation } from "@/hooks/useTranslation"
-import { InputLocale } from "../_components/InputLocale"
 import { useState } from "react"
+import { InputLocation } from "../_components/InputLocation"
 
 export default function HomePage() {
   const t = useTranslation()
@@ -17,7 +17,7 @@ export default function HomePage() {
     <main>
       <h1>{t.condition.excellent}</h1>
       <h2>{local}</h2>
-      <InputLocale onSearch={setSearch} />
+      <InputLocation onSearch={setSearch} />
     </main>
   )
 }

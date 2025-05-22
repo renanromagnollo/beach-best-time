@@ -23,6 +23,9 @@ export type Dictionary = {
     sun: string
     rain: string
     wind: string
+    waterTemp: string
+    cloudCover: string
+    rainHours: string
   },
   condition: {
     excellent: string

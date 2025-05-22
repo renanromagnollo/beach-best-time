@@ -19,10 +19,13 @@
     "month": "month"
   },
   "element": {
-    "air": "air",
-    "sun": "sun",
-    "rain": "rain",
-    "wind": "wind"
+    "air": "Air",
+    "sun": "Sun",
+    "rain": "Rain",
+    "wind": "Wind",
+    "waterTemp": "Water Temp.",
+    "cloudCover": "Cloud Cover",
+    "rainHours": "Rain Hours"
   },
   "condition": {
     "excellent": "excellent",
