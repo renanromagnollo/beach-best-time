@@ -1,7 +1,6 @@
 
 import { useQuery } from '@tanstack/react-query'
 import { StatisticsAPI } from '../../services/api/statistics-api'
-import { calcScore } from '@/utils/score'
 
 async function getStatistics(location: string) {
   const apiStatistics = new StatisticsAPI()
@@ -20,9 +19,8 @@ async function getStatistics(location: string) {
       throw new Error('Não foi possível obter os dados climáticos.')
     }
 
-    const score = calcScore(climateDate)
 
-    return score
+    return climateDate
 
   } catch (error) {
     console.error(error)
@@ -30,7 +28,7 @@ async function getStatistics(location: string) {
   }
 }
 
-export function useStatistics(location: string, revalidate: number, refetchOnFocus = false) {
+export function useStatistics(location: string, revalidate: number = 0, refetchOnFocus = false) {
   // const queryClient = useQueryClient()
 
   const query = useQuery({
@@ -41,7 +39,7 @@ export function useStatistics(location: string, revalidate: number, refetchOnFoc
     },
     refetchOnWindowFocus: refetchOnFocus,
     enabled: !!location,
-    staleTime: Math.max(1000 * 60 * 60 * revalidate, 1000 * 10)
+    staleTime: Math.max(1000 * 60 * 60 * revalidate, 1000 * 5)
   })
 
   return query

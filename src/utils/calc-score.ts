@@ -40,15 +40,15 @@ export function calcScore(data: ClimateData[]): ClimateData[] {
     score += precipitationHoursScore;
 
     // 🌊 Temperatura da água
-    let waterTempScore = 0;
-    if (month.waterTemperature >= 24 && month.waterTemperature <= 28) {
-      waterTempScore = 10;
-    } else if (month.waterTemperature >= 22 && month.waterTemperature < 24) {
-      waterTempScore = 5;
-    } else if (month.waterTemperature > 28 && month.waterTemperature <= 30) {
-      waterTempScore = 5;
-    }
-    score += waterTempScore;
+    // let waterTempScore = 0;
+    // if (month.waterTemperature >= 24 && month.waterTemperature <= 28) {
+    //   waterTempScore = 10;
+    // } else if (month.waterTemperature >= 22 && month.waterTemperature < 24) {
+    //   waterTempScore = 5;
+    // } else if (month.waterTemperature > 28 && month.waterTemperature <= 30) {
+    //   waterTempScore = 5;
+    // }
+    // score += waterTempScore;
 
     // Avaliação com base na pontuação
     let rating: 'excellent' | 'good' | 'unstable' | 'bad' | 'terrible';
