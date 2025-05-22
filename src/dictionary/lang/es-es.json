@@ -23,7 +23,6 @@
     "sun": "Sol",
     "rain": "Lluvia",
     "wind": "Viento",
-    "waterTemp": "Temp. agua",
     "cloudCover": "Nublado",
     "rainHours": "Horas con lluvia"
   },

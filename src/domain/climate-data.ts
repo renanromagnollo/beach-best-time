@@ -6,7 +6,7 @@ export type ClimateData = {
   cloudCover: number
   hourSun: number
   windMax: number
-  waterTemperature: number
+  // waterTemperature: number
   score?: number
   rating?: 'excellent' | 'good' | 'unstable' | 'bad' | 'terrible'
 }

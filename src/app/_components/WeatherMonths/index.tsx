@@ -15,7 +15,7 @@ interface WeatherMonthsProps {
 
 
 
-export default function WeatherMonths({ data }: WeatherMonthsProps) {
+export function WeatherMonths({ data }: WeatherMonthsProps) {
 
   const t = useTranslation()
 
