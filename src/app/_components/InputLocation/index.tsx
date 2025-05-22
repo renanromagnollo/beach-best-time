@@ -23,6 +23,7 @@ export function InputLocation({ onSearch }: InputLocationProps) {
   return (
     <form onSubmit={handleSubmit} className="flex gap-4 justify-center">
       <input
+        className="border px-2 w-1/2"
         type="text"
         placeholder="Digite o nome do lugar (ex: Guarapari)"
         ref={inputContent}

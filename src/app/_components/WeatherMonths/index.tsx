@@ -38,7 +38,6 @@ export function WeatherMonths({ data }: WeatherMonthsProps) {
   return (
     <div className="space-y-8 mt-10">
       <h2 className="text-2xl font-semibold text-center">Avaliação Mês a Mês</h2>
-
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -71,7 +70,6 @@ export function WeatherMonths({ data }: WeatherMonthsProps) {
                 <p>☀️ {t.element.sun}: {m.hourSun} h/dia</p>
                 <p>🌧️ {t.element.rain}: {m.precipitation} mm/mês</p>
                 <p>💨 {t.element.wind}: {m.windMax} km/h</p>
-                <p>🌊 {t.element.waterTemp}: {m.waterTemperature}°C</p>
                 <p>☁️ {t.element.cloudCover}: {m.cloudCover}%</p>
                 <p>☔ {t.element.rainHours}: {m.precipitationHours} h/mês</p>
                 <p className="text-sm text-blue-600 font-semibold">⭐ Score: {m.score}/100</p>

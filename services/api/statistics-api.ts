@@ -36,9 +36,9 @@ export class StatisticsAPI {
     latitude,
     longitude,
   }: Coords): Promise<ClimateData[] | null> {
-    const ano = new Date().getFullYear() - 2;
+    const ano = new Date().getFullYear();
     // const url = `https://archive-api.open-meteo.com/v1/archive?latitude=${latitude}&longitude=${longitude}&start_date=${ano}-01-01&end_date=${ano}-12-31&daily=temperature_2m_max,temperature_2m_min,rain_sum,sunshine_duration,windspeed_10m_max,windgusts_10m_max&timezone=America%2FSao_Paulo`;
-    const url = `https://archive-api.open-meteo.com/v1/archive?latitude=${latitude}&longitude=${longitude}&start_date=${ano}-01-01&end_date=${ano}-12-31&daily=temperature_2m_max,temperature_2m_min,rain_sum,sunshine_duration,windspeed_10m_max,windgusts_10m_max,cloudcover_mean,precipitation_hours&timezone=America%2FSao_Paulo`;
+    const url = `https://archive-api.open-meteo.com/v1/archive?latitude=${latitude}&longitude=${longitude}&start_date=${ano - 3}-01-01&end_date=${ano - 1}-12-31&daily=temperature_2m_max,temperature_2m_min,rain_sum,sunshine_duration,windspeed_10m_max,windgusts_10m_max,cloudcover_mean,precipitation_hours&timezone=America%2FSao_Paulo`;
     // const url = `https://archive-api.open-meteo.com/v1/archive?latitude=${latitude}&longitude=${longitude}&start_date=${ano}-01-01&end_date=${ano}-12-31&daily=temperature_2m_max,temperature_2m_min,rain_sum,sunshine_duration,windspeed_10m_max,windgusts_10m_max,cloudcover_mean,precipitation_hours,temperature_water_max,temperature_water_min&timezone=America%2FSao_Paulo`;
 
     try {
@@ -74,8 +74,8 @@ export class StatisticsAPI {
         months[month].precipitation += days.rain_sum[i];
         months[month].hourSun += days.sunshine_duration[i] / 3600;
         months[month].windMax += Math.max(days.windspeed_10m_max[i], days.windgusts_10m_max[i]);
-        // months[month].cloudCover += days.cloudcover_mean[i];
-        // months[month].precipitationHours += days.precipitation_hours[i];
+        months[month].cloudCover += days.cloudcover_mean[i];
+        months[month].precipitationHours += days.precipitation_hours[i];
         // months[month].waterTemperature += waterTempMedia;
 
 
@@ -91,8 +91,8 @@ export class StatisticsAPI {
           precipitation: parseFloat(m.precipitation.toFixed(1)),
           hourSun: parseFloat((m.hourSun / days).toFixed(1)),
           windMax: parseFloat((m.windMax / days).toFixed(1)),
-          // cloudCover: parseFloat((m.cloudCover / days).toFixed(1)),
-          // precipitationHours: parseFloat((m.precipitationHours / days).toFixed(1)),
+          cloudCover: parseFloat((m.cloudCover / days).toFixed(1)),
+          precipitationHours: parseFloat((m.precipitationHours / days).toFixed(1)),
           // waterTemperature: parseFloat((m.waterTemperature / days).toFixed(1)),
         };
       });
