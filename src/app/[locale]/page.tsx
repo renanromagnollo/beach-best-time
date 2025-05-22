@@ -2,12 +2,12 @@
 
 import { useCallback, useEffect, useState } from "react"
 import { ClimateData } from "@/domain"
-import { useStatistics, useTranslation } from "@/hooks"
+import { useStatistics } from "@/hooks"
 import { InputLocation, WeatherMonths } from "../_components"
 import { calcScore } from "@/utils/calc-score"
 
 export default function HomePage() {
-  const t = useTranslation()
+  // const t = useTranslation()
 
   const [errorPage, setErrorPage] = useState('')
   const [location, setLocation] = useState('')
