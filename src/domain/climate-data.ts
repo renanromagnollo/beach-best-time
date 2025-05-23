@@ -6,7 +6,11 @@ export type ClimateData = {
   cloudCover: number
   hourSun: number
   windMax: number
-  // waterTemperature: number
   score?: number
   rating?: 'excellent' | 'good' | 'unstable' | 'bad' | 'terrible'
+}
+
+export interface ClimateDataWithYear extends ClimateData {
+  year: number;
+  count: number;
 }
