@@ -1,0 +1,652 @@
+[
+  {
+    "beach": {
+      "name": "Porto de Galinhas",
+      "slug": "porto-de-galinhas",
+      "state": "PE",
+      "latitude": -8.5067,
+      "longitude": -35.0029
+    },
+    "month": 11,
+    "score": 10,
+    "label": "Perfeito",
+    "recommendation": "Excelente período para viagens, praia e atividades ao ar livre."
+  },
+  {
+    "beach": {
+      "name": "Porto de Galinhas",
+      "slug": "porto-de-galinhas",
+      "state": "PE",
+      "latitude": -8.5067,
+      "longitude": -35.0029
+    },
+    "month": 10,
+    "score": 9.8,
+    "label": "Perfeito",
+    "recommendation": "Excelente período para viagens, praia e atividades ao ar livre."
+  },
+  {
+    "beach": {
+      "name": "Jericoacoara",
+      "slug": "jericoacoara",
+      "state": "CE",
+      "latitude": -2.7933,
+      "longitude": -40.5125
+    },
+    "month": 6,
+    "score": 9.7,
+    "label": "Perfeito",
+    "recommendation": "Excelente período para viagens, praia e atividades ao ar livre."
+  },
+  {
+    "beach": {
+      "name": "Porto de Galinhas",
+      "slug": "porto-de-galinhas",
+      "state": "PE",
+      "latitude": -8.5067,
+      "longitude": -35.0029
+    },
+    "month": 1,
+    "score": 9.7,
+    "label": "Perfeito",
+    "recommendation": "Excelente período para viagens, praia e atividades ao ar livre."
+  },
+  {
+    "beach": {
+      "name": "Praia de Copacabana",
+      "slug": "copacabana",
+      "state": "RJ",
+      "latitude": -22.9711,
+      "longitude": -43.1822
+    },
+    "month": 4,
+    "score": 9.3,
+    "label": "Perfeito",
+    "recommendation": "Excelente período para viagens, praia e atividades ao ar livre."
+  },
+  {
+    "beach": {
+      "name": "Porto de Galinhas",
+      "slug": "porto-de-galinhas",
+      "state": "PE",
+      "latitude": -8.5067,
+      "longitude": -35.0029
+    },
+    "month": 12,
+    "score": 9.3,
+    "label": "Perfeito",
+    "recommendation": "Excelente período para viagens, praia e atividades ao ar livre."
+  },
+  {
+    "beach": {
+      "name": "Praia de Copacabana",
+      "slug": "copacabana",
+      "state": "RJ",
+      "latitude": -22.9711,
+      "longitude": -43.1822
+    },
+    "month": 9,
+    "score": 9,
+    "label": "Perfeito",
+    "recommendation": "Excelente período para viagens, praia e atividades ao ar livre."
+  },
+  {
+    "beach": {
+      "name": "Porto de Galinhas",
+      "slug": "porto-de-galinhas",
+      "state": "PE",
+      "latitude": -8.5067,
+      "longitude": -35.0029
+    },
+    "month": 8,
+    "score": 9,
+    "label": "Excelente",
+    "recommendation": "Excelente período para viagens, praia e atividades ao ar livre."
+  },
+  {
+    "beach": {
+      "name": "Praia de Copacabana",
+      "slug": "copacabana",
+      "state": "RJ",
+      "latitude": -22.9711,
+      "longitude": -43.1822
+    },
+    "month": 3,
+    "score": 8.8,
+    "label": "Excelente",
+    "recommendation": "Excelente período para viagens, praia e atividades ao ar livre."
+  },
+  {
+    "beach": {
+      "name": "Porto de Galinhas",
+      "slug": "porto-de-galinhas",
+      "state": "PE",
+      "latitude": -8.5067,
+      "longitude": -35.0029
+    },
+    "month": 9,
+    "score": 8.8,
+    "label": "Excelente",
+    "recommendation": "Excelente período para viagens, praia e atividades ao ar livre."
+  },
+  {
+    "beach": {
+      "name": "Praia de Copacabana",
+      "slug": "copacabana",
+      "state": "RJ",
+      "latitude": -22.9711,
+      "longitude": -43.1822
+    },
+    "month": 6,
+    "score": 8.6,
+    "label": "Excelente",
+    "recommendation": "Excelente período para viagens, praia e atividades ao ar livre."
+  },
+  {
+    "beach": {
+      "name": "Praia de Copacabana",
+      "slug": "copacabana",
+      "state": "RJ",
+      "latitude": -22.9711,
+      "longitude": -43.1822
+    },
+    "month": 12,
+    "score": 8.6,
+    "label": "Excelente",
+    "recommendation": "Excelente período para viagens, praia e atividades ao ar livre."
+  },
+  {
+    "beach": {
+      "name": "Praia de Copacabana",
+      "slug": "copacabana",
+      "state": "RJ",
+      "latitude": -22.9711,
+      "longitude": -43.1822
+    },
+    "month": 11,
+    "score": 8.4,
+    "label": "Excelente",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Jericoacoara",
+      "slug": "jericoacoara",
+      "state": "CE",
+      "latitude": -2.7933,
+      "longitude": -40.5125
+    },
+    "month": 5,
+    "score": 8.4,
+    "label": "Excelente",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Maresias",
+      "slug": "maresias",
+      "state": "SP",
+      "latitude": -23.7914,
+      "longitude": -45.5593
+    },
+    "month": 4,
+    "score": 8.4,
+    "label": "Excelente",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Porto de Galinhas",
+      "slug": "porto-de-galinhas",
+      "state": "PE",
+      "latitude": -8.5067,
+      "longitude": -35.0029
+    },
+    "month": 4,
+    "score": 8.4,
+    "label": "Excelente",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Jericoacoara",
+      "slug": "jericoacoara",
+      "state": "CE",
+      "latitude": -2.7933,
+      "longitude": -40.5125
+    },
+    "month": 7,
+    "score": 8.2,
+    "label": "Excelente",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Porto de Galinhas",
+      "slug": "porto-de-galinhas",
+      "state": "PE",
+      "latitude": -8.5067,
+      "longitude": -35.0029
+    },
+    "month": 3,
+    "score": 8.2,
+    "label": "Excelente",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Copacabana",
+      "slug": "copacabana",
+      "state": "RJ",
+      "latitude": -22.9711,
+      "longitude": -43.1822
+    },
+    "month": 2,
+    "score": 8.1,
+    "label": "Excelente",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Copacabana",
+      "slug": "copacabana",
+      "state": "RJ",
+      "latitude": -22.9711,
+      "longitude": -43.1822
+    },
+    "month": 5,
+    "score": 8.1,
+    "label": "Excelente",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Maresias",
+      "slug": "maresias",
+      "state": "SP",
+      "latitude": -23.7914,
+      "longitude": -45.5593
+    },
+    "month": 6,
+    "score": 8,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Porto de Galinhas",
+      "slug": "porto-de-galinhas",
+      "state": "PE",
+      "latitude": -8.5067,
+      "longitude": -35.0029
+    },
+    "month": 2,
+    "score": 8,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia do Rosa",
+      "slug": "praia-do-rosa",
+      "state": "SC",
+      "latitude": -28.128,
+      "longitude": -48.648
+    },
+    "month": 3,
+    "score": 7.9,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia Grande",
+      "slug": "arraial-do-cabo",
+      "state": "RJ",
+      "latitude": -22.9672,
+      "longitude": -42.0278
+    },
+    "month": 3,
+    "score": 7.8,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Jericoacoara",
+      "slug": "jericoacoara",
+      "state": "CE",
+      "latitude": -2.7933,
+      "longitude": -40.5125
+    },
+    "month": 8,
+    "score": 7.8,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Copacabana",
+      "slug": "copacabana",
+      "state": "RJ",
+      "latitude": -22.9711,
+      "longitude": -43.1822
+    },
+    "month": 7,
+    "score": 7.7,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Maresias",
+      "slug": "maresias",
+      "state": "SP",
+      "latitude": -23.7914,
+      "longitude": -45.5593
+    },
+    "month": 3,
+    "score": 7.7,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Copacabana",
+      "slug": "copacabana",
+      "state": "RJ",
+      "latitude": -22.9711,
+      "longitude": -43.1822
+    },
+    "month": 8,
+    "score": 7.6,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Maresias",
+      "slug": "maresias",
+      "state": "SP",
+      "latitude": -23.7914,
+      "longitude": -45.5593
+    },
+    "month": 12,
+    "score": 7.6,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Copacabana",
+      "slug": "copacabana",
+      "state": "RJ",
+      "latitude": -22.9711,
+      "longitude": -43.1822
+    },
+    "month": 1,
+    "score": 7.5,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Maresias",
+      "slug": "maresias",
+      "state": "SP",
+      "latitude": -23.7914,
+      "longitude": -45.5593
+    },
+    "month": 5,
+    "score": 7.5,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Maresias",
+      "slug": "maresias",
+      "state": "SP",
+      "latitude": -23.7914,
+      "longitude": -45.5593
+    },
+    "month": 7,
+    "score": 7.5,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Porto de Galinhas",
+      "slug": "porto-de-galinhas",
+      "state": "PE",
+      "latitude": -8.5067,
+      "longitude": -35.0029
+    },
+    "month": 7,
+    "score": 7.4,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Maresias",
+      "slug": "maresias",
+      "state": "SP",
+      "latitude": -23.7914,
+      "longitude": -45.5593
+    },
+    "month": 9,
+    "score": 7.3,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Porto de Galinhas",
+      "slug": "porto-de-galinhas",
+      "state": "PE",
+      "latitude": -8.5067,
+      "longitude": -35.0029
+    },
+    "month": 5,
+    "score": 7.3,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Copacabana",
+      "slug": "copacabana",
+      "state": "RJ",
+      "latitude": -22.9711,
+      "longitude": -43.1822
+    },
+    "month": 10,
+    "score": 7.2,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Maresias",
+      "slug": "maresias",
+      "state": "SP",
+      "latitude": -23.7914,
+      "longitude": -45.5593
+    },
+    "month": 2,
+    "score": 7.1,
+    "label": "Muito Bom",
+    "recommendation": "Bom período para aproveitar a praia."
+  },
+  {
+    "beach": {
+      "name": "Praia do Rosa",
+      "slug": "praia-do-rosa",
+      "state": "SC",
+      "latitude": -28.128,
+      "longitude": -48.648
+    },
+    "month": 1,
+    "score": 7,
+    "label": "Bom",
+    "recommendation": "Condições razoáveis para praia."
+  },
+  {
+    "beach": {
+      "name": "Praia Grande",
+      "slug": "arraial-do-cabo",
+      "state": "RJ",
+      "latitude": -22.9672,
+      "longitude": -42.0278
+    },
+    "month": 5,
+    "score": 6.8,
+    "label": "Bom",
+    "recommendation": "Condições razoáveis para praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Maresias",
+      "slug": "maresias",
+      "state": "SP",
+      "latitude": -23.7914,
+      "longitude": -45.5593
+    },
+    "month": 8,
+    "score": 6.8,
+    "label": "Bom",
+    "recommendation": "Condições razoáveis para praia."
+  },
+  {
+    "beach": {
+      "name": "Praia do Rosa",
+      "slug": "praia-do-rosa",
+      "state": "SC",
+      "latitude": -28.128,
+      "longitude": -48.648
+    },
+    "month": 2,
+    "score": 6.8,
+    "label": "Bom",
+    "recommendation": "Condições razoáveis para praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Maresias",
+      "slug": "maresias",
+      "state": "SP",
+      "latitude": -23.7914,
+      "longitude": -45.5593
+    },
+    "month": 11,
+    "score": 6.7,
+    "label": "Bom",
+    "recommendation": "Condições razoáveis para praia."
+  },
+  {
+    "beach": {
+      "name": "Jericoacoara",
+      "slug": "jericoacoara",
+      "state": "CE",
+      "latitude": -2.7933,
+      "longitude": -40.5125
+    },
+    "month": 1,
+    "score": 6.5,
+    "label": "Bom",
+    "recommendation": "Condições razoáveis para praia."
+  },
+  {
+    "beach": {
+      "name": "Praia Grande",
+      "slug": "arraial-do-cabo",
+      "state": "RJ",
+      "latitude": -22.9672,
+      "longitude": -42.0278
+    },
+    "month": 4,
+    "score": 6.4,
+    "label": "Bom",
+    "recommendation": "Condições razoáveis para praia."
+  },
+  {
+    "beach": {
+      "name": "Praia Grande",
+      "slug": "arraial-do-cabo",
+      "state": "RJ",
+      "latitude": -22.9672,
+      "longitude": -42.0278
+    },
+    "month": 6,
+    "score": 6.4,
+    "label": "Bom",
+    "recommendation": "Condições razoáveis para praia."
+  },
+  {
+    "beach": {
+      "name": "Praia Grande",
+      "slug": "arraial-do-cabo",
+      "state": "RJ",
+      "latitude": -22.9672,
+      "longitude": -42.0278
+    },
+    "month": 7,
+    "score": 6.4,
+    "label": "Bom",
+    "recommendation": "Condições razoáveis para praia."
+  },
+  {
+    "beach": {
+      "name": "Jericoacoara",
+      "slug": "jericoacoara",
+      "state": "CE",
+      "latitude": -2.7933,
+      "longitude": -40.5125
+    },
+    "month": 9,
+    "score": 6.4,
+    "label": "Bom",
+    "recommendation": "Condições razoáveis para praia."
+  },
+  {
+    "beach": {
+      "name": "Porto de Galinhas",
+      "slug": "porto-de-galinhas",
+      "state": "PE",
+      "latitude": -8.5067,
+      "longitude": -35.0029
+    },
+    "month": 6,
+    "score": 6.4,
+    "label": "Bom",
+    "recommendation": "Condições razoáveis para praia."
+  },
+  {
+    "beach": {
+      "name": "Praia de Maresias",
+      "slug": "maresias",
+      "state": "SP",
+      "latitude": -23.7914,
+      "longitude": -45.5593
+    },
+    "month": 1,
+    "score": 6.3,
+    "label": "Bom",
+    "recommendation": "Condições razoáveis para praia."
+  },
+  {
+    "beach": {
+      "name": "Jericoacoara",
+      "slug": "jericoacoara",
+      "state": "CE",
+      "latitude": -2.7933,
+      "longitude": -40.5125
+    },
+    "month": 4,
+    "score": 6.2,
+    "label": "Bom",
+    "recommendation": "Condições razoáveis para praia."
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "months": {
+    "1": "Janeiro",
+    "2": "Fevereiro",
+    "3": "Março",
+    "4": "Abril",
+    "5": "Maio",
+    "6": "Junho",
+    "7": "Julho",
+    "8": "Agosto",
+    "9": "Setembro",
+    "10": "Outubro",
+    "11": "Novembro",
+    "12": "Dezembro"
+  },
+  "climate": {
+    "perfect": "Perfeito",
+    "excellent": "Excelente",
+    "veryGood": "Muito Bom",
+    "good": "Bom",
+    "regular": "Regular",
+    "bad": "Ruim"
+  },
+  "recommendations": {
+    "excellent": "Excelente período para viagens e praia.",
+    "good": "Bom período para aproveitar a praia.",
+    "regular": "Condições razoáveis para praia.",
+    "bad": "Período menos recomendado para praia."
+  }
+}

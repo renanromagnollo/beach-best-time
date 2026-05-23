@@ -1,46 +1,32 @@
+'use client';
 
-import { useQuery } from '@tanstack/react-query'
-import { StatisticsAPI } from '../../services/api/statistics-api'
+import { useQuery } from '@tanstack/react-query';
 
-async function getStatistics(location: string) {
-  const apiStatistics = new StatisticsAPI()
-
-  try {
-
-    const coords = await apiStatistics.getCoordsByName(location)
-
-    if (!coords) {
-      throw new Error('Localização inválida ou não encontrada.')
-    }
-
-    const climateDate = await apiStatistics.getClimateData(coords)
-
-    if (!climateDate) {
-      throw new Error('Não foi possível obter os dados climáticos.')
-    }
+import { Beach } from '@/domain/beach';
+import { getClimateData } from '@/app/api/statistics-api';
 
 
-    return climateDate
+export function useStatistics(
+  beach: Beach | null
+) {
+  return useQuery({
+    queryKey: [
+      'climate-data',
+      beach?.slug,
+    ],
 
-  } catch (error) {
-    console.error(error)
-    throw error
-  }
-}
-
-export function useStatistics(location: string, revalidate: number = 0, refetchOnFocus = false) {
-  // const queryClient = useQueryClient()
-
-  const query = useQuery({
-    queryKey: [location],
     queryFn: async () => {
-      const data = await getStatistics(location)
-      return data
-    },
-    refetchOnWindowFocus: refetchOnFocus,
-    enabled: !!location,
-    staleTime: Math.max(1000 * 60 * 60 * revalidate, 1000 * 5)
-  })
+      if (!beach) {
+        return [];
+      }
 
-  return query
+      return await getClimateData(
+        beach
+      );
+    },
+
+    enabled: !!beach,
+
+    staleTime: 1000 * 60 * 60 * 24,
+  });
 }

@@ -1,74 +1,159 @@
-import { ClimateData } from "@/domain";
+import { ClimateAnalysis, ClimateData } from '@/domain';
 
-export function calcScore(data: ClimateData[]): ClimateData[] {
-  const WEIGHTS = {
-    temperature: 40,
-    precipitation: 30,
-    sun: 20,
-    wind: 10,
-    cloudCover: 20,
-    precipitationHours: 10,
+export function calcScore(data: ClimateData): ClimateAnalysis {
+  const {
+    averageTemperature,
+    cloudCover,
+    hourSun,
+    precipitation,
+    precipitationHours,
+    season,
+    windMax,
+  } = data;
+
+  const reasons: string[] = [];
+
+  let weightTemp = 1;
+  let weightSun = 1;
+  let weightRain = 1;
+  let weightCloud = 1;
+  let weightWind = 1;
+
+  const weightPrecipHours = 0.8;
+
+  switch (season) {
+    case 'verão':
+      weightSun = 1.5;
+      weightRain = 1.2;
+      weightTemp = 1.3;
+      break;
+
+    case 'inverno':
+      weightSun = 1.3;
+      weightCloud = 0.8;
+      weightTemp = 0.8;
+      break;
+
+    case 'outono':
+      weightRain = 1.2;
+      weightWind = 0.9;
+      break;
+
+    case 'primavera':
+      weightSun = 1.1;
+      weightRain = 1.1;
+      break;
+  }
+
+  // 🌡️ Temperatura
+  const tempScore = Math.max(
+    0,
+    10 - Math.abs(26 - averageTemperature)
+  );
+
+  if (tempScore < 7) {
+    reasons.push('Temperatura fora do ideal');
+  }
+
+  // 🌧️ Chuva
+  const rainScore =
+    precipitation <= 1
+      ? 10
+      : precipitation <= 3
+        ? 8
+        : precipitation <= 5
+          ? 6
+          : precipitation <= 8
+            ? 4
+            : 2;
+
+  if (precipitation > 5) {
+    reasons.push('Alta precipitação');
+  }
+
+  // ☔ Horas de chuva
+  const rainHourScore = Math.max(
+    0,
+    10 - precipitationHours * 2
+  );
+
+  if (precipitationHours > 3) {
+    reasons.push('Muitas horas de chuva');
+  }
+
+  // ☁️ Nuvens
+  const cloudScore = Math.max(
+    0,
+    10 - cloudCover / 10
+  );
+
+  if (cloudCover > 60) {
+    reasons.push('Muita nebulosidade');
+  }
+
+  // ☀️ Sol
+  const sunScore = Math.min(
+    (hourSun / 8) * 10,
+    10
+  );
+
+  if (hourSun < 5) {
+    reasons.push('Poucas horas de sol');
+  }
+
+  // 💨 Vento
+  const windScore =
+    windMax <= 15
+      ? 10
+      : windMax <= 25
+        ? 8
+        : windMax <= 35
+          ? 5
+          : 2;
+
+  if (windMax > 30) {
+    reasons.push('Vento muito forte');
+  }
+
+  const totalScore =
+    (
+      tempScore * weightTemp +
+      rainScore * weightRain +
+      rainHourScore * weightPrecipHours +
+      cloudScore * weightCloud +
+      sunScore * weightSun +
+      windScore * weightWind
+    ) /
+    (
+      weightTemp +
+      weightRain +
+      weightPrecipHours +
+      weightCloud +
+      weightSun +
+      weightWind
+    );
+
+  let rating: ClimateAnalysis['rating'];
+
+  if (totalScore >= 8.5) {
+    rating = 'excellent';
+  } else if (totalScore >= 7) {
+    rating = 'good';
+  } else if (totalScore >= 5.5) {
+    rating = 'unstable';
+  } else if (totalScore >= 4) {
+    rating = 'bad';
+  } else {
+    rating = 'terrible';
+  }
+
+  return {
+    ...data,
+
+    score: Number((totalScore * 10).toFixed(1)),
+
+    rating,
+
+    reasons,
   };
-
-  return data.map((month) => {
-    let score = 0;
-
-    // 🌡️ Temperatura ideal
-    if (month.averageTemperature >= 24 && month.averageTemperature <= 32) {
-      score += WEIGHTS.temperature;
-    } else if (month.averageTemperature >= 21 && month.averageTemperature < 24) {
-      score += WEIGHTS.temperature * 0.5;
-    } else {
-      score += WEIGHTS.temperature * 0.125;
-    }
-
-    // 🌧️ Precipitação total (quanto menos, melhor)
-    const chuvaScore = Math.max(
-      0,
-      WEIGHTS.precipitation - (month.precipitation / 150) * WEIGHTS.precipitation
-    );
-    score += chuvaScore;
-
-    // ☀️ Horas de sol por dia
-    if (month.hourSun >= 7) {
-      score += WEIGHTS.sun;
-    } else if (month.hourSun >= 4) {
-      score += WEIGHTS.sun * 0.5;
-    }
-
-    // 💨 Vento
-    if (month.windMax <= 25) {
-      score += WEIGHTS.wind;
-    } else if (month.windMax <= 35) {
-      score += WEIGHTS.wind * 0.5;
-    }
-
-    // ☁️ Cobertura de nuvens (quanto menos, melhor)
-    const cloudCoverScore = Math.max(
-      0,
-      WEIGHTS.cloudCover - (month.cloudCover / 100) * WEIGHTS.cloudCover
-    );
-    score += cloudCoverScore;
-
-    // 🌧️ Horas de precipitação (quanto menos, melhor)
-    const precipitationHoursScore = Math.max(
-      0,
-      WEIGHTS.precipitationHours - (month.precipitationHours / 6) * WEIGHTS.precipitationHours
-    );
-    score += precipitationHoursScore;
-
-    // 🏷️ Avaliação final
-    let rating: ClimateData["rating"];
-    if (score >= 90) rating = "excellent";
-    else if (score >= 70) rating = "good";
-    else if (score >= 50) rating = "unstable";
-    else if (score >= 30) rating = "bad";
-    else rating = "terrible";
-
-    return {
-      ...month,
-      score: parseFloat(score.toFixed(1)),
-      rating,
-    };
-  });
 }

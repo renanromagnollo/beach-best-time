@@ -1,19 +1,16 @@
 'use client';
-
+import { ClimateAnalysis } from '@/domain';
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid,
 } from 'recharts';
 import { CheckCircle, ThumbsUp, AlertTriangle, XCircle, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { ClimateData } from '@/domain';
 import { Card, CardContent } from '../ui/card';
 import { useTranslation } from '@/hooks/useTranslation';
 
 interface WeatherMonthsProps {
-  data: ClimateData[];
+  data?: ClimateAnalysis[] | null;
 }
-
-
 
 export function WeatherMonths({ data }: WeatherMonthsProps) {
 
@@ -35,13 +32,21 @@ export function WeatherMonths({ data }: WeatherMonthsProps) {
     terrible: <Zap className="w-4 h-4 inline-block mr-1 rotate-180" />,
   };
 
+  if (!Array.isArray(data) || data.length === 0) {
+    return (
+      <div className="mt-10 text-center text-zinc-500">
+        Nenhum dado climático encontrado.
+      </div>
+    )
+  }
+
   return (
     <div className="space-y-8 mt-10">
       <h2 className="text-2xl font-semibold text-center">Avaliação Mês a Mês</h2>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="m" />
+          <XAxis dataKey="month" />
           <YAxis />
           <Tooltip />
           <Bar dataKey="score" fill="#3b82f6" />
@@ -67,12 +72,12 @@ export function WeatherMonths({ data }: WeatherMonthsProps) {
                   </span>
                 </div>
                 <p>🌡️ {t.element.air}: {m.averageTemperature}°C</p>
+                <p>☁️ {t.element.cloudCover}: {m.cloudCover}%</p>
                 <p>☀️ {t.element.sun}: {m.hourSun} h/dia</p>
                 <p>🌧️ {t.element.rain}: {m.precipitation} mm/mês</p>
-                <p>💨 {t.element.wind}: {m.windMax} km/h</p>
-                <p>☁️ {t.element.cloudCover}: {m.cloudCover}%</p>
                 <p>☔ {t.element.rainHours}: {m.precipitationHours} h/mês</p>
-                <p className="text-sm text-blue-600 font-semibold">⭐ Score: {m.score}/100</p>
+                <p>💨 {t.element.wind}: {m.windMax} km/h</p>
+                <p className="text-sm text-blue-600 font-semibold">⭐ Score: {m.score}</p>
               </CardContent>
             </Card>
           </motion.div>

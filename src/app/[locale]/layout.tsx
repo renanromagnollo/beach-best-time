@@ -1,28 +1,34 @@
-import { TranslationProvider } from "@/context/translation-context"
-import { getDictionary } from "@/dictionary/get-dictionary"
-import { Providers } from "@/providers"
-import { i18n, Locale } from "@/types"
-import { notFound } from "next/navigation"
+// src/app/[locale]/layout.tsx
 
-export default async function LocaleLayout(props: {
+import { NextIntlClientProvider } from 'next-intl'
+
+import { getMessages } from 'next-intl/server'
+
+type Props = {
   children: React.ReactNode
-  params: Promise<{ locale: Locale }>
-}) {
 
-  const { children, params } = props
+  params: Promise<{
+    locale: string
+  }>
+}
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: Props) {
   const { locale } = await params
 
-  if (!i18n.locales.includes(locale)) {
-    notFound()
-  }
-
-  const dictionary = await getDictionary(locale)
+  const messages = await getMessages()
 
   return (
-    <Providers>
-      <TranslationProvider dictionary={dictionary}>
-        {children}
-      </TranslationProvider>
-    </Providers>
+    <html lang={locale}>
+      <body>
+        <NextIntlClientProvider
+          messages={messages}
+        >
+          {children}
+        </NextIntlClientProvider>
+      </body>
+    </html>
   )
 }
