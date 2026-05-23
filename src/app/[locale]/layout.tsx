@@ -1,12 +1,8 @@
-// src/app/[locale]/layout.tsx
-
 import { NextIntlClientProvider } from 'next-intl'
-
 import { getMessages } from 'next-intl/server'
 
 type Props = {
   children: React.ReactNode
-
   params: Promise<{
     locale: string
   }>
@@ -18,15 +14,18 @@ export default async function LocaleLayout({
 }: Props) {
   const { locale } = await params
 
-  const messages = await getMessages()
+  const messages =
+    await getMessages()
 
   return (
     <html lang={locale}>
-      <body>
+      <body className="min-h-screen bg-zinc-50">
         <NextIntlClientProvider
           messages={messages}
         >
-          {children}
+          <div className="flex min-h-screen flex-col">
+            {children}
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>

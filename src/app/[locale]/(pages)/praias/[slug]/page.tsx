@@ -1,108 +1,146 @@
-import { BeachBestMonths, BeachClimateCards, BeachInsights } from '@/components/layout'
-import { Hero } from '@/components/layout/page'
-import { getAllBeachesSlugs } from '@/services/climate/get-all-beaches-slugs'
-import { getBeachClimate } from '@/services/climate/get-beach-climate'
 import { notFound } from 'next/navigation'
 
+import {
+  getAllBeaches,
+} from '@/services/climate/get-all-beaches'
+
+import {
+  getBeachBySlug,
+} from '@/services/climate/get-beach-by-slug'
+
+import { BeachHeader } from '@/components/beaches/beach-header'
+
+import { BeachBestMonths } from '@/components/beaches/beach-best-months'
+
+import { BeachInsights } from '@/components/beaches/beach-insights'
+
+import { BeachSummaryTable } from '@/components/beaches/beach-summary-table'
+
+import { BeachScoreCards }
+  from '@/components/beaches/beach-score-cards'
+
+import {
+  BeachClimateChart,
+} from '@/components/beaches/beach-climate-chart'
 type BeachPageProps = {
   params: Promise<{
-    locale: 'pt' | 'en'
+    locale: string
     slug: string
   }>
 }
 
 export async function generateStaticParams() {
-  const slugs =
-    await getAllBeachesSlugs()
+  const beaches =
+    await getAllBeaches()
 
-  const locales = ['pt', 'en']
+  return beaches.map((beach) => ({
+    slug: beach.beach.slug,
+  }))
+}
 
-  return slugs.flatMap((slug) =>
-    locales.map((locale) => ({
-      slug,
-      locale,
-    }))
-  )
+export async function generateMetadata({
+  params,
+}: BeachPageProps) {
+  const { slug } = await params
+
+  const beach =
+    await getBeachBySlug(slug)
+
+  return {
+    title: `${beach.beach.name} - Melhor época para viajar`,
+
+    description: `Descubra os melhores meses para viajar para ${beach.beach.name}.`,
+  }
 }
 
 export default async function BeachPage({
   params,
 }: BeachPageProps) {
-  const { slug, locale } =
+  const { locale, slug } =
     await params
 
-  let data
+  let beach
 
   try {
-    data = await getBeachClimate(slug)
+    beach =
+      await getBeachBySlug(slug)
   } catch {
     notFound()
   }
 
-  /**
-   * JSON-LD SEO
-   */
-  const structuredData = {
-    '@context': 'https://schema.org',
-
-    '@type': 'TouristDestination',
-
-    name: data.beach.name,
-
-    description:
-      locale === 'pt'
-        ? `Análise climática da praia ${data.beach.name}`
-        : `Climate analysis of ${data.beach.name}`,
-
-    geo: {
-      '@type': 'GeoCoordinates',
-
-      latitude:
-        data.beach.latitude,
-
-      longitude:
-        data.beach.longitude,
-    },
-  }
+  const bestMonths = [
+    ...beach.climateSummary,
+  ]
+    .sort(
+      (a, b) =>
+        b.averageScore -
+        a.averageScore
+    )
+    .slice(0, 3)
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            structuredData
-          ),
-        }}
-      />
-
-      <main className="mx-auto max-w-7xl space-y-10 px-6 py-10">
-        <Hero
-          name={data.beach.name}
-          state={data.beach.state}
-          bestMonth={
-            data.bestMonths[0]
-          }
+    <main className="pb-24">
+      <div className="mx-auto max-w-7xl space-y-12 px-6 py-12">
+        <BeachHeader
+          beach={beach.beach}
+          bestMonth={bestMonths[0]}
           locale={locale}
         />
 
-        <BeachBestMonths
-          months={data.bestMonths}
-          locale={locale}
-        />
-
-        <BeachClimateCards
+        <BeachScoreCards
           summary={
-            data.climateSummary
+            beach.climateSummary
           }
         />
 
         <BeachInsights
           insights={
-            data.climateInsights
+            beach.climateInsights
           }
         />
-      </main>
-    </>
+
+        <BeachClimateChart
+          summary={
+            beach.climateSummary
+          }
+        />
+
+        <BeachBestMonths
+          locale={locale}
+          months={bestMonths}
+        />
+
+        <BeachSummaryTable
+          locale={locale}
+          summary={
+            beach.climateSummary
+          }
+        />
+      </div>
+
+      <section className="mx-auto mt-20 max-w-5xl px-6">
+        <div className="rounded-[32px] bg-gradient-to-r from-sky-600 to-blue-700 p-12 text-center text-white">
+          <h2 className="text-4xl font-black">
+            Ready To Plan Your Trip?
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/90">
+            Use historical climate
+            intelligence to choose
+            the perfect month for
+            your next beach vacation.
+          </p>
+
+          <div className="mt-8">
+            <a
+              href={`/${locale}/praias`}
+              className="inline-flex rounded-xl bg-white px-6 py-4 font-semibold text-sky-700 transition hover:scale-105"
+            >
+              Explore More Beaches
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }

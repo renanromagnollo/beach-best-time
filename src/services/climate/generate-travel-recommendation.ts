@@ -1,6 +1,4 @@
-import {
-  ClimateSummary,
-} from './generate-climate-summary'
+import { ClimateSummary } from "@/types/climate"
 
 export type RecommendationPeriod = {
   months: number[]

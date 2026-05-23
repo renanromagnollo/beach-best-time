@@ -1,4 +1,4 @@
-// src/app/layout.tsx
+import './globals.css'
 
 type Props = {
   children: React.ReactNode
@@ -7,5 +7,11 @@ type Props = {
 export default function RootLayout({
   children,
 }: Props) {
-  return children
+  return (
+    <html lang="en">
+      <body className="bg-zinc-50 text-zinc-900 antialiased">
+        {children}
+      </body>
+    </html>
+  )
 }
